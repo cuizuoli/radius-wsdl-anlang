@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ufnet.ws.dao.AccountTypeDao">
+	<select id="selectOne" parameterType="int" resultType="AccountType">
+		SELECT
+			id AS id,
+			type_id AS typeId,
+			pay_type AS payType,
+			max_band AS maxBand
+		FROM account_type
+		WHERE id = #{id}
+	</select>
+	<select id="selectOnePauseRule" parameterType="int" resultType="PauseRule">
+		SELECT
+			pause_fee AS pauseFee
+		FROM pause_rule
+		WHERE pause_rule_id = #{pauseRuleId}
+	</select>
+	<select id="selectGroupMap" parameterType="GroupMap" resultType="GroupMap">
+		SELECT
+			group_id AS groupId,
+			accounttype_id AS accounttypeId
+		FROM group_map
+		<where>
+			<if test="groupId != null and groupId != ''">
+				group_id = #{groupId}
+			</if>
+			<if test="accounttypeId != null and accounttypeId != ''">
+				AND accounttype_id = #{accounttypeId}
+			</if>
+		</where>
+	</select>
+</mapper>

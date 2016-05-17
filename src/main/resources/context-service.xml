@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+	http://www.springframework.org/schema/util
+	http://www.springframework.org/schema/util/spring-util-3.2.xsd">
+
+	<util:map id="stateMap">
+		<!-- 
+		<entry key="userstate" value="currentState"></entry>
+		 -->
+		<!-- 
+			userstate:
+				1 - 正常
+				2 - 删除
+			currentState:
+				1 - 开户
+				2 - 开通
+				3 - 暂停
+				4 - 试用
+				5 - 退网
+				6 - 断网
+				7 - 潜在
+		 -->
+		<entry key="1" value="2"></entry>
+		<entry key="2" value="5"></entry>
+	</util:map>
+
+	<bean id="userService" class="com.ufnet.ws.service.UserService">
+		<property name="stateMap" ref="stateMap"></property>
+		<property name="userInfoDao" ref="userInfoDao"></property>
+		<property name="accountTypeDao" ref="accountTypeDao"></property>
+		<property name="communityId" value="${user_info.community_id}"></property><!-- 对应小区的ID号，使用前先到系统管理里确认小区ID号 -->
+		<property name="aptNo" value="${user_info.apt_no}"></property><!-- 对应小区门牌号 -->
+		<property name="authMove" value="${user_info.auth_move}"></property><!-- 认证漫游 -->
+		<property name="availableAmount" value="${user_info.available_amount}"></property><!-- 可用金额 单位：元 -->
+		<property name="availableTime" value="${user_info.available_time}"></property><!-- 可用时长 单位：秒 -1 表示不限制 -->
+		<property name="availableFlow" value="${user_info.available_flow}"></property><!-- 可用流量 单位：KB -1 表示不限制 -->
+		<property name="usedAmount" value="${user_info.used_amount}"></property><!-- 已用金额 单位：元 -->
+		<property name="usedFlow" value="${user_info.used_flow}"></property><!-- 已用流量 单位：KB -->
+		<property name="usedTime" value="${user_info.used_time}"></property><!-- 已用时间 单位：秒 -->
+		<property name="maxNetTime" value="${user_info.max_net_time}"></property><!-- 最大上网时长 单位：秒 -1 表示不限制 -->
+		<property name="autoDownInterval" value="${user_info.auto_down_interval}"></property><!-- 自动断网间隔 单位：秒 -1 表示不限制 -->
+		<property name="isPopup" value="${user_info.is_popup}"></property><!-- 弹出在线窗口 0 不弹出 1 弹出 -->
+		<property name="needRealIp" value="${user_info.need_real_ip}"></property><!-- 真是IP地址 -->
+		<property name="isLog" value="${user_info.is_log}"></property><!-- 记录日志 -->
+		<property name="loginSessionId" value="${user_info.login_session_id}"></property><!-- 登陆sessionID -->
+		<property name="maxOnlineUsers" value="${user_info.max_online_users}"></property><!-- 最大在线用户数 -->
+		<property name="sex" value="${user_info.sex}"></property><!-- 性别 -->
+		<property name="mobilePhone" value="${user_info.mobile_phone}"></property><!-- 手机 -->
+		<property name="email" value="${user_info.email}"></property><!-- 电子邮件 -->
+		<property name="educationLevelId" value="${user_info.education_level_id}"></property><!-- 文化程度ID 1 - 小学 2 - 初中 3 - 高中 4 - 大专 5 - 大本 6 - 硕士 7 - 博士 8 - 其它 -->
+		<property name="vocationId" value="${user_info.vocation_id}"></property><!-- # 职业ID 1  - 金融保险 6  - 进出口贸易 11 - 医药卫生 16 - 建筑业 21 - 自由职业  -->
+		<property name="userClass" value="${user_info.user_class}"></property><!-- 用户类型 1 - 小区用户 2 - 内部用户 3 - 公司 -->
+		<property name="vip" value="${user_info.vip}"></property><!-- VIP用户 0 - 非VIP用户 1 - VIP用户 -->
+		<property name="registerType" value="${user_info.register_type}"></property><!-- 报名类型 2 - 现场报名 3 - 电话报名 4 - 网络报名 5 - 物业推荐 6 - 柜台报名 7 - 其它 -->
+		<property name="certificateTypeId" value="${uesr_info.certificate_type_id}"></property><!-- 证件类型 1 - 身份证 2 - 军官证 3 - 护照 4 - 学生证 5 - 其它 -->
+		<property name="isInstall" value="${user_info.is_install}"></property><!-- 网络设备是否安装 0 - 未安装 1 - 已安装 -->
+		<property name="isWiring" value="${user_info.is_wiring}"></property><!-- 是否布线 0 - 未布线 1 - 已布线 -->
+		<property name="vlanId" value="${user_info.vlan_id}"></property><!-- VLAN ID -->
+		<property name="switchId" value="${user_info.switch_id}"></property><!-- 交换机编号 -->
+		<property name="switchPort" value="${user_info.switch_port}"></property><!-- 交换机端口 -->
+		<property name="sales" value="${user_info.sales}"></property><!-- 录入员 -->
+		<property name="buildingNo" value="${user_info.building_no}"></property><!-- 楼号 -->
+		<property name="reasonOfNoInstall" value="${user_info.reason_of_no_install}"></property><!-- 不安装原因 1 - 没有布线 2 - 暂不安装 3 - 不安装 4 - 信息错误 5 - 其他原因 -->
+		<property name="complexIndex" value="${user_info.complex_index}"></property><!-- 难缠指数 -->
+		<property name="independent" value="${user_info.independent}"></property><!-- 独立帐号 0 - 非独立帐号 1 - 独立帐号 -->
+		<property name="denyAgent" value="${user_info.deny_agent}"></property><!-- 0: 禁止 1:允许 -->
+		<property name="loginType" value="${user_info.login_type}"></property><!-- 登陆类型 1 - web 2 - client 3 - web + client -->
+		<property name="secondLine" value="${user_info.second_line}"></property>
+		<property name="gatewayId" value="${user_ip_mac.gateway_id}"></property><!-- 网关ID -->
+		<property name="ipAddress" value="${user_ip_mac.ip_address}"></property><!-- IP地址 -->
+		<property name="mac" value="${user_ip_mac.mac}"></property><!-- MAC地址 -->
+	</bean>
+
+</beans>

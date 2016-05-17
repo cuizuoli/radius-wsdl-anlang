@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns="http://amtium.com"
+	xmlns:tns="http://amtium.com"
+	targetNamespace="http://amtium.com"
+	elementFormDefault="qualified">
+
+	<!-- CardNewUser -->
+	<xsd:element name="CardNewUserRequest" type="CardNewUserRequestType"></xsd:element>
+
+	<xsd:complexType name="CardNewUserRequestType">
+		<xsd:sequence>
+			<xsd:element name="userid" type="xsd:string"></xsd:element>
+			<xsd:element name="groupid" type="xsd:int"></xsd:element>
+			<xsd:element name="teamid" type="xsd:int"></xsd:element>
+			<xsd:element name="pwd" type="xsd:string"></xsd:element>
+			<xsd:element name="username" type="xsd:string"></xsd:element>
+			<xsd:element name="phone" type="xsd:string"></xsd:element>
+			<xsd:element name="address" type="xsd:string"></xsd:element>
+			<xsd:element name="limitdate_end" type="xsd:string"></xsd:element>
+			<xsd:element name="userstate" type="xsd:string"></xsd:element>
+			<xsd:element name="opendate" type="xsd:string"></xsd:element>
+			<xsd:element name="notes" type="xsd:string"></xsd:element>
+			<xsd:element name="certNum" type="xsd:string"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:element name="CardNewUserResponse" type="CardNewUserResponseType"></xsd:element>
+
+	<xsd:complexType name="CardNewUserResponseType">
+		<xsd:sequence>
+			<xsd:element name="ReturnCode" type="xsd:int"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<!-- CardDelUser -->
+	<xsd:element name="CardDelUserRequest" type="CardDelUserRequestType"></xsd:element>
+
+	<xsd:complexType name="CardDelUserRequestType">
+		<xsd:sequence>
+			<xsd:element name="userid" type="xsd:string"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:element name="CardDelUserResponse" type="CardDelUserResponseType"></xsd:element>
+
+	<xsd:complexType name="CardDelUserResponseType">
+		<xsd:sequence>
+			<xsd:element name="ReturnCode" type="xsd:int"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<!-- CardChangePWD -->
+	<xsd:element name="CardChangePWDRequest" type="CardChangePWDRequestType"></xsd:element>
+
+	<xsd:complexType name="CardChangePWDRequestType">
+		<xsd:sequence>
+			<xsd:element name="userid" type="xsd:string"></xsd:element>
+			<xsd:element name="destpwd" type="xsd:string"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:element name="CardChangePWDResponse" type="CardChangePWDResponseType"></xsd:element>
+
+	<xsd:complexType name="CardChangePWDResponseType">
+		<xsd:sequence>
+			<xsd:element name="ReturnCode" type="xsd:int"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<!-- GetUserPassWord -->
+	<xsd:element name="GetUserPassWordRequest" type="GetUserPassWordRequestType"></xsd:element>
+
+	<xsd:complexType name="GetUserPassWordRequestType">
+		<xsd:sequence>
+			<xsd:element name="userid" type="xsd:string"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:element name="GetUserPassWordResponse" type="GetUserPassWordResponseType"></xsd:element>
+
+	<xsd:complexType name="GetUserPassWordResponseType">
+		<xsd:sequence>
+			<xsd:element name="ReturnCode" type="xsd:string"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<!-- GetUserLimitEndDate -->
+	<xsd:element name="GetUserLimitEndDateRequest" type="GetUserLimitEndDateRequestType"></xsd:element>
+
+	<xsd:complexType name="GetUserLimitEndDateRequestType">
+		<xsd:sequence>
+			<xsd:element name="userid" type="xsd:string"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:element name="GetUserLimitEndDateResponse" type="GetUserLimitEndDateResponseType"></xsd:element>
+
+	<xsd:complexType name="GetUserLimitEndDateResponseType">
+		<xsd:sequence>
+			<xsd:element name="ReturnCode" type="xsd:string"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<!-- GetUserInfo -->
+	<xsd:element name="GetUserInfoRequest" type="GetUserInfoRequestType"></xsd:element>
+
+	<xsd:complexType name="GetUserInfoRequestType">
+		<xsd:sequence>
+			<xsd:element name="userid" type="xsd:string"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:element name="GetUserInfoResponse" type="GetUserInfoResponseType"></xsd:element>
+
+	<xsd:complexType name="GetUserInfoResponseType">
+		<xsd:sequence>
+			<xsd:element name="ReturnCode" type="xsd:string"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<!-- ModifyUserInfo -->
+	<xsd:element name="ModifyUserInfoRequest" type="ModifyUserInfoRequestType"></xsd:element>
+
+	<xsd:complexType name="ModifyUserInfoRequestType">
+		<xsd:sequence>
+			<xsd:element name="userid" type="xsd:string"></xsd:element>
+			<xsd:element name="groupid" type="xsd:int"></xsd:element>
+			<xsd:element name="teamid" type="xsd:int"></xsd:element>
+			<xsd:element name="pwd" type="xsd:string"></xsd:element>
+			<xsd:element name="username" type="xsd:string"></xsd:element>
+			<xsd:element name="phone" type="xsd:string"></xsd:element>
+			<xsd:element name="address" type="xsd:string"></xsd:element>
+			<xsd:element name="limitdate_end" type="xsd:string"></xsd:element>
+			<xsd:element name="userstate" type="xsd:string"></xsd:element>
+			<xsd:element name="opendate" type="xsd:string"></xsd:element>
+			<xsd:element name="notes" type="xsd:string"></xsd:element>
+			<xsd:element name="remain_fee" type="xsd:float"></xsd:element>
+			<xsd:element name="certNum" type="xsd:string"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:element name="ModifyUserInfoResponse" type="ModifyUserInfoResponseType"></xsd:element>
+
+	<xsd:complexType name="ModifyUserInfoResponseType">
+		<xsd:sequence>
+			<xsd:element name="ReturnCode" type="xsd:int"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<!-- GetUserIdFromOnline -->
+	<xsd:element name="GetUserIdFromOnlineRequest" type="GetUserIdFromOnlineRequestType"></xsd:element>
+
+	<xsd:complexType name="GetUserIdFromOnlineRequestType">
+		<xsd:sequence>
+			<xsd:element name="Userip" type="xsd:string"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:element name="GetUserIdFromOnlineResponse" type="GetUserIdFromOnlineResponseType"></xsd:element>
+
+	<xsd:complexType name="GetUserIdFromOnlineResponseType">
+		<xsd:sequence>
+			<xsd:element name="ReturnCode" type="xsd:string"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<!-- ResumeUserInfo -->
+	<xsd:element name="ResumeUserInfoRequest" type="ResumeUserInfoRequestType"></xsd:element>
+
+	<xsd:complexType name="ResumeUserInfoRequestType">
+		<xsd:sequence>
+			<xsd:element name="userid" type="xsd:string"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:element name="ResumeUserInfoResponse" type="ResumeUserInfoResponseType"></xsd:element>
+
+	<xsd:complexType name="ResumeUserInfoResponseType">
+		<xsd:sequence>
+			<xsd:element name="ReturnCode" type="xsd:int"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<!-- OffLineUser -->
+	<xsd:element name="OffLineUserRequest" type="OffLineUserRequestType"></xsd:element>
+
+	<xsd:complexType name="OffLineUserRequestType">
+		<xsd:sequence>
+			<xsd:element name="userip" type="xsd:string"></xsd:element>
+			<xsd:element name="usermac" type="xsd:string"></xsd:element>
+			<xsd:element name="userid" type="xsd:string"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:element name="OffLineUserResponse" type="OffLineUserResponseType"></xsd:element>
+
+	<xsd:complexType name="OffLineUserResponseType">
+		<xsd:sequence>
+			<xsd:element name="ReturnCode" type="xsd:int"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<!-- GetUserIdFromTicket -->
+	<xsd:element name="GetUserIdFromTicketRequest" type="GetUserIdFromTicketRequestType"></xsd:element>
+
+	<xsd:complexType name="GetUserIdFromTicketRequestType">
+		<xsd:sequence>
+			<xsd:element name="userip" type="xsd:string"></xsd:element>
+			<xsd:element name="onlinetime" type="xsd:string"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:element name="GetUserIdFromTicketResponse" type="GetUserIdFromTicketResponseType"></xsd:element>
+
+	<xsd:complexType name="GetUserIdFromTicketResponseType">
+		<xsd:sequence>
+			<xsd:element name="ReturnCode" type="xsd:string"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<!-- GetPrePolicyList -->
+	<xsd:element name="GetPrePolicyListRequest" type="GetPrePolicyListRequestType"></xsd:element>
+
+	<xsd:complexType name="GetPrePolicyListRequestType">
+		<xsd:sequence>
+			<xsd:element name="userID" type="xsd:string"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:element name="GetPrePolicyListResponse" type="GetPrePolicyListResponseType"></xsd:element>
+
+	<xsd:complexType name="GetPrePolicyListResponseType">
+		<xsd:sequence>
+			<xsd:element name="ReturnCode" type="xsd:string"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<!-- ModifyPrePolicy -->
+	<xsd:element name="ModifyPrePolicyRequest" type="ModifyPrePolicyRequestType"></xsd:element>
+
+	<xsd:complexType name="ModifyPrePolicyRequestType">
+		<xsd:sequence>
+			<xsd:element name="userID" type="xsd:string"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:element name="ModifyPrePolicyResponse" type="ModifyPrePolicyResponseType"></xsd:element>
+
+	<xsd:complexType name="ModifyPrePolicyResponseType">
+		<xsd:sequence>
+			<xsd:element name="ReturnCode" type="xsd:boolean"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+</xsd:schema>

@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ufnet.ws.dao.UserInfoDao">
+	<select id="selectCountByLoginName" parameterType="string" resultType="int">
+		SELECT COUNT(1) FROM user_info
+		WHERE login_name = #{loginName}
+	</select>
+	<select id="selectOneByLoginName" parameterType="string" resultType="UserInfo">
+		SELECT
+			user_name AS userName,
+			login_name AS loginName,
+			password,
+			accounttype_id AS accounttypeId,
+			phone,
+			date_of_open AS dateOfOpen,
+			date_of_end AS dateOfEnd,
+			current_state AS currentState,
+			available_amount AS availableAmount,
+			remark
+		FROM user_info
+		WHERE login_name = #{loginName}
+	</select>
+	<select id="selectAccountId" resultType="int">
+		SELECT accountid_seq.nextval FROM dual
+	</select>
+	<delete id="delete" parameterType="string">
+		DELETE FROM user_info WHERE login_name = #{loginName}
+	</delete>
+	<insert id="insert" parameterType="UserInfo">
+		INSERT INTO user_info (
+			account_id,
+			user_name,
+			community_id,
+			apt_no,
+			login_name,
+			password,
+			accounttype_id,
+			auth_type_id,
+			auth_move,
+			date_of_end,
+			available_amount,
+			available_time,
+			available_flow,
+			bandwidth,
+			used_amount,
+			used_flow,
+			used_time,
+			max_net_time,
+			auto_down_interval,
+			is_popup,
+			need_real_ip,
+			is_log,
+			current_state,
+			date_of_kaitong,
+			last_login_time,
+			login_session_id,
+			max_online_users,
+			sex,
+			birthday,
+			phone,
+			mobile_phone,
+			email,
+			education_level_id,
+			vocation_id,
+			user_class,
+			vip,
+			register_type,
+			certificate_type_id,
+			certificate_no,
+			date_of_apply,
+			date_of_open,
+			date_of_sign_contract,
+			date_of_end_contract,
+			is_install,
+			is_wiring,
+			vlan_id,
+			switch_id,
+			switch_port,
+			sales,
+			admin_id,
+			building_no,
+			reason_of_no_install,
+			complex_index,
+			pay_account_id,
+			independent,
+			remark,
+			deny_agent,
+			login_type,
+			open_admin,
+			second_line
+		) VALUES (
+			#{accountId},
+			#{userName},
+			#{communityId},
+			#{aptNo},
+			#{loginName},
+			#{password},
+			#{accounttypeId},
+			#{authTypeId},
+			#{authMove},
+			#{dateOfEnd},
+			#{availableAmount},
+			#{availableTime},
+			#{availableFlow},
+			#{bandwidth},
+			#{usedAmount},
+			#{usedFlow},
+			#{usedTime},
+			#{maxNetTime},
+			#{autoDownInterval},
+			#{isPopup},
+			#{needRealIp},
+			#{isLog},
+			#{currentState},
+			#{dateOfKaitong},
+			#{lastLoginTime},
+			#{loginSessionId},
+			#{maxOnlineUsers},
+			#{sex},
+			#{birthday},
+			#{phone},
+			#{mobilePhone},
+			#{email},
+			#{educationLevelId},
+			#{vocationId},
+			#{userClass},
+			#{vip},
+			#{registerType},
+			#{certificateTypeId},
+			#{certificateNo},
+			#{dateOfApply},
+			#{dateOfOpen},
+			#{dateOfSignContract},
+			#{dateOfEndContract},
+			#{isInstall},
+			#{isWiring},
+			#{vlanId},
+			#{switchId},
+			#{switchPort},
+			#{sales},
+			#{adminId},
+			#{buildingNo},
+			#{reasonOfNoInstall},
+			#{complexIndex},
+			#{payAccountId},
+			#{independent},
+			#{remark},
+			#{denyAgent},
+			#{loginType},
+			#{openAdmin},
+			#{secondLine}
+		)
+	</insert>
+	<update id="update" parameterType="UserInfo">
+		UPDATE user_info
+		<set>
+			<if test="availableAmount > 0">
+				available_amount = #{availableAmount},
+			</if>
+			<if test="userName != null and userName != ''">
+				user_name = #{userName},
+			</if>
+			<if test="password != null and password != ''">
+				password = #{password},
+			</if>
+			<if test="accounttypeId != 0">
+				accounttype_id = #{accounttypeId},
+			</if>
+			<if test="authTypeId != 0">
+				auth_type_id = #{authTypeId},
+			</if>
+			<if test="bandwidth != 0">
+				bandwidth = #{bandwidth},
+			</if>
+			<if test="dateOfEnd != null and dateOfEnd != ''">
+				date_of_end = #{dateOfEnd},
+			</if>
+			<if test="currentState != 0">
+				current_state = #{currentState},
+			</if>
+			<if test="dateOfKaitong != null and dateOfKaitong != ''">
+				date_of_kaitong = #{dateOfKaitong},
+			</if>
+			<if test="phone != null and phone != ''">
+				phone = #{phone},
+			</if>
+			<if test="certificateNo != null and certificateNo != ''">
+				certificate_no = #{certificateNo},
+			</if>
+			<if test="adminId != 0">
+				admin_id = #{adminId},
+			</if>
+			<if test="remark != null and remark != ''">
+				remark = #{remark},
+			</if>
+			<if test="openAdmin != 0">
+				open_admin = #{openAdmin},
+			</if>
+		</set>
+		<where>
+			login_name = #{loginName}
+		</where>
+	</update>
+	<select id="selectUserIdFromOnline" parameterType="string" resultType="string">
+		SELECT loginname FROM onlineusertbl
+		WHERE ipaddress = #{userIp}
+	</select>
+	<select id="selectUserIdFromTicket" parameterType="UseHistory" resultType="string">
+		<![CDATA[
+		SELECT u.login_name AS loginName
+		FROM use_history uh
+		INNER JOIN user_info u
+		ON u.account_id = uh.account_id
+		WHERE uh.ip_address = #{ipAddress}
+		AND uh.login_time <= #{onlineTime}
+		AND uh.offile_time >= #{onlineTime}
+		]]>
+	</select>
+	<select id="selectPrePolicyList" parameterType="string" resultType="PredictAccountType">
+		SELECT
+			oa.id AS originTypeId,
+			oa.type_name AS originTypeName,
+			ta.id AS targetTypeId,
+			ta.type_name AS targetTypeName
+		FROM predict_account_type pa
+		INNER JOIN user_info u
+		ON u.account_id = pa.account_id
+		AND u.login_name = #{loginName}
+		INNER JOIN account_type oa
+		ON oa.id = pa.origin_account_type_id
+		INNER JOIN account_type ta
+		ON ta.id = pa.target_account_type_id
+	</select>
+	<update id="updatePrePolicy" parameterType="PredictAccountType">
+		UPDATE predict_account_type
+		SET target_account_type_id = #{targetTypeId},
+			implement_date = #{implementDate}
+		WHERE account_id = (SELECT account_id FROM user_info WHERE login_name = #{loginName})
+	</update>
+	<update id="updateOffLineUser">
+		UPDATE onlineusertbl
+		SET sessionid = '-1'
+		WHERE loginname = #{loginName}
+		AND ipaddress = #{ipAddress}
+		AND macaddress = #{macAddress}
+	</update>
+	<insert id="insertUserIpMac" parameterType="UserIpMac">
+		INSERT INTO user_ip_mac (
+			ip_mac_id,
+			account_id,
+			ip_address,
+			mac,
+			gateway_net_range_id,
+			gateway_id,
+			protect_ip
+		) VALUES (
+			ipmacid_seq.nextval,
+			#{accountId},
+			#{ipAddress},
+			#{mac},
+			0,
+			#{gatewayId},
+			0
+		)
+	</insert>
+	<delete id="deleteUserIpMac" parameterType="int">
+		DELETE FROM user_ip_mac WHERE account_id = #{accountId}
+	</delete>
+</mapper>

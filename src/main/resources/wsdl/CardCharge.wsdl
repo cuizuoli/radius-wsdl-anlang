@@ -1,0 +1,522 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:sch="http://amtium.com"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:tns="http://amtium.com"
+	targetNamespace="http://amtium.com">
+	<wsdl:types>
+		<xsd:schema xmlns="http://amtium.com"
+			xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+			elementFormDefault="qualified"
+			targetNamespace="http://amtium.com">
+
+			<!-- CardNewUser -->
+			<xsd:element name="CardNewUser4Request" type="CardNewUser4RequestType"/>
+			<xsd:complexType name="CardNewUser4RequestType">
+				<xsd:sequence>
+					<xsd:element name="userid" type="xsd:string"/>
+					<xsd:element name="groupid" type="xsd:int"/>
+					<xsd:element name="teamid" type="xsd:int"/>
+					<xsd:element name="pwd" type="xsd:string"/>
+					<xsd:element name="username" type="xsd:string"/>
+					<xsd:element name="phone" type="xsd:string"/>
+					<xsd:element name="address" type="xsd:string"/>
+					<xsd:element name="limitdate_end" type="xsd:string"/>
+					<xsd:element name="userstate" type="xsd:string"/>
+					<xsd:element name="opendate" type="xsd:string"/>
+					<xsd:element name="notes" type="xsd:string"/>
+					<xsd:element name="certNum" type="xsd:string"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:element name="CardNewUser4Response" type="CardNewUser4ResponseType"/>
+			<xsd:complexType name="CardNewUser4ResponseType">
+				<xsd:sequence>
+					<xsd:element name="CardNewUser4Return" type="xsd:int"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<!-- CardDelUser -->
+			<xsd:element name="CardDelUserRequest" type="CardDelUserRequestType"/>
+			<xsd:complexType name="CardDelUserRequestType">
+				<xsd:sequence>
+					<xsd:element name="userid" type="xsd:string"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:element name="CardDelUserResponse" type="CardDelUserResponseType"/>
+			<xsd:complexType name="CardDelUserResponseType">
+				<xsd:sequence>
+					<xsd:element name="CardDelUserReturn" type="xsd:int"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<!-- CardChangePWD -->
+			<xsd:element name="CardChangePWD2Request" type="CardChangePWD2RequestType"/>
+			<xsd:complexType name="CardChangePWD2RequestType">
+				<xsd:sequence>
+					<xsd:element name="userid" type="xsd:string"/>
+					<xsd:element name="destpwd" type="xsd:string"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:element name="CardChangePWD2Response" type="CardChangePWD2ResponseType"/>
+			<xsd:complexType name="CardChangePWD2ResponseType">
+				<xsd:sequence>
+					<xsd:element name="CardChangePWD2Return" type="xsd:int"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<!-- GetUserPassWord -->
+			<xsd:element name="getUserPassWordRequest" type="getUserPassWordRequestType"/>
+			<xsd:complexType name="getUserPassWordRequestType">
+				<xsd:sequence>
+					<xsd:element name="userid" type="xsd:string"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:element name="getUserPassWordResponse" type="getUserPassWordResponseType"/>
+			<xsd:complexType name="getUserPassWordResponseType">
+				<xsd:sequence>
+					<xsd:element name="getUserPassWordReturn" type="xsd:string"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<!-- GetUserLimitEndDate -->
+			<xsd:element name="getUserLimitEndDateRequest" type="getUserLimitEndDateRequestType"/>
+			<xsd:complexType name="getUserLimitEndDateRequestType">
+				<xsd:sequence>
+					<xsd:element name="userid" type="xsd:string"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:element name="getUserLimitEndDateResponse" type="getUserLimitEndDateResponseType"/>
+			<xsd:complexType name="getUserLimitEndDateResponseType">
+				<xsd:sequence>
+					<xsd:element name="getUserLimitEndDateReturn" type="xsd:string"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<!-- GetUserInfo -->
+			<xsd:element name="getUserInfoRequest" type="getUserInfoRequestType"/>
+			<xsd:complexType name="getUserInfoRequestType">
+				<xsd:sequence>
+					<xsd:element name="userid" type="xsd:string"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:element name="getUserInfoResponse" type="getUserInfoResponseType"/>
+			<xsd:complexType name="getUserInfoResponseType">
+				<xsd:sequence>
+					<xsd:element name="getUserInfoReturn" type="xsd:string"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<!-- ModifyUserInfo -->
+			<xsd:element name="ModifyUserInfo3Request" type="ModifyUserInfo3RequestType"/>
+			<xsd:complexType name="ModifyUserInfo3RequestType">
+				<xsd:sequence>
+					<xsd:element name="userid" type="xsd:string"/>
+					<xsd:element name="groupid" type="xsd:int"/>
+					<xsd:element name="teamid" type="xsd:int"/>
+					<xsd:element name="pwd" type="xsd:string"/>
+					<xsd:element name="username" type="xsd:string"/>
+					<xsd:element name="phone" type="xsd:string"/>
+					<xsd:element name="address" type="xsd:string"/>
+					<xsd:element name="limitdate_end" type="xsd:string"/>
+					<xsd:element name="userstate" type="xsd:string"/>
+					<xsd:element name="opendate" type="xsd:string"/>
+					<xsd:element name="notes" type="xsd:string"/>
+					<xsd:element name="remain_fee" type="xsd:float"/>
+					<xsd:element name="certNum" type="xsd:string"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:element name="ModifyUserInfo3Response" type="ModifyUserInfo3ResponseType"/>
+			<xsd:complexType name="ModifyUserInfo3ResponseType">
+				<xsd:sequence>
+					<xsd:element name="ModifyUserInfo3Return" type="xsd:int"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<!-- GetUserIdFromOnline -->
+			<xsd:element name="getUserIdFromOnlineRequest" type="getUserIdFromOnlineRequestType"/>
+			<xsd:complexType name="getUserIdFromOnlineRequestType">
+				<xsd:sequence>
+					<xsd:element name="userip" type="xsd:string"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:element name="getUserIdFromOnlineResponse" type="getUserIdFromOnlineResponseType"/>
+			<xsd:complexType name="getUserIdFromOnlineResponseType">
+				<xsd:sequence>
+					<xsd:element name="getUserIdFromOnlineReturn" type="xsd:string"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<!-- ResumeUserInfo -->
+			<xsd:element name="ResumeUserInfoRequest" type="ResumeUserInfoRequestType"/>
+			<xsd:complexType name="ResumeUserInfoRequestType">
+				<xsd:sequence>
+					<xsd:element name="userid" type="xsd:string"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:element name="ResumeUserInfoResponse" type="ResumeUserInfoResponseType"/>
+			<xsd:complexType name="ResumeUserInfoResponseType">
+				<xsd:sequence>
+					<xsd:element name="ResumeUserInfoReturn" type="xsd:int"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<!-- OffLineUser -->
+			<xsd:element name="offLineUserRequest" type="offLineUserRequestType"/>
+			<xsd:complexType name="offLineUserRequestType">
+				<xsd:sequence>
+					<xsd:element name="userip" type="xsd:string"/>
+					<xsd:element name="usermac" type="xsd:string"/>
+					<xsd:element name="userid" type="xsd:string"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:element name="offLineUserResponse" type="offLineUserResponseType"/>
+			<xsd:complexType name="offLineUserResponseType">
+				<xsd:sequence>
+					<xsd:element name="offLineUserReturn" type="xsd:int"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<!-- GetUserIdFromTicket -->
+			<xsd:element name="getUserIdFromTicketRequest" type="getUserIdFromTicketRequestType"/>
+			<xsd:complexType name="getUserIdFromTicketRequestType">
+				<xsd:sequence>
+					<xsd:element name="userip" type="xsd:string"/>
+					<xsd:element name="onlinetime" type="xsd:string"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:element name="getUserIdFromTicketResponse" type="getUserIdFromTicketResponseType"/>
+			<xsd:complexType name="getUserIdFromTicketResponseType">
+				<xsd:sequence>
+					<xsd:element name="getUserIdFromTicketReturn" type="xsd:string"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<!-- GetPrePolicyList -->
+			<xsd:element name="getPrePolicyListRequest" type="getPrePolicyListRequestType"/>
+			<xsd:complexType name="getPrePolicyListRequestType">
+				<xsd:sequence>
+					<xsd:element name="userID" type="xsd:string"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:element name="getPrePolicyListResponse" type="getPrePolicyListResponseType"/>
+			<xsd:complexType name="getPrePolicyListResponseType">
+				<xsd:sequence>
+					<xsd:element name="getPrePolicyListReturn" type="xsd:string"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<!-- ModifyPrePolicy -->
+			<xsd:element name="modifyPrePolicyRequest" type="ModifyPrePolicyRequestType"/>
+			<xsd:complexType name="ModifyPrePolicyRequestType">
+				<xsd:sequence>
+					<xsd:element name="userID" type="xsd:string"/>
+					<xsd:element name="userGroupID" type="xsd:int"/>
+					<xsd:element name="prDate" type="xsd:string"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:element name="modifyPrePolicyResponse" type="ModifyPrePolicyResponseType"/>
+			<xsd:complexType name="ModifyPrePolicyResponseType">
+				<xsd:sequence>
+					<xsd:element name="modifyPrePolicyReturn" type="xsd:boolean"/>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="CardNewUser4Request">
+		<wsdl:part element="tns:CardNewUser4Request" name="CardNewUser">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="CardNewUser4Response">
+		<wsdl:part element="tns:CardNewUser4Response" name="CardNewUser4Response">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="CardDelUserRequest">
+		<wsdl:part element="tns:CardDelUserRequest" name="CardDelUser">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="CardDelUserResponse">
+		<wsdl:part element="tns:CardDelUserResponse" name="CardDelUserResponse">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="CardChangePWD2Request">
+		<wsdl:part element="tns:CardChangePWD2Request" name="CardChangePWD2">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="CardChangePWD2Response">
+		<wsdl:part element="tns:CardChangePWD2Response" name="CardChangePWD2Response">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="getUserPassWordRequest">
+		<wsdl:part element="tns:getUserPassWordRequest" name="getUserPassWord">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="getUserPassWordResponse">
+		<wsdl:part element="tns:getUserPassWordResponse" name="getUserPassWordResponse">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="getUserLimitEndDateRequest">
+		<wsdl:part element="tns:getUserLimitEndDateRequest" name="getUserLimitEndDate">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="getUserLimitEndDateResponse">
+		<wsdl:part element="tns:getUserLimitEndDateResponse" name="getUserLimitEndDateResponse">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="getUserInfoRequest">
+		<wsdl:part element="tns:getUserInfoRequest" name="getUserInfo">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="getUserInfoResponse">
+		<wsdl:part element="tns:getUserInfoResponse" name="getUserInfoResponse">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="ModifyUserInfo3Request">
+		<wsdl:part element="tns:ModifyUserInfo3Request" name="ModifyUserInfo">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="ModifyUserInfo3Response">
+		<wsdl:part element="tns:ModifyUserInfo3Response" name="ModifyUserInfo3Response">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="getUserIdFromOnlineRequest">
+		<wsdl:part element="tns:getUserIdFromOnlineRequest" name="getUserIdFromOnline">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="getUserIdFromOnlineResponse">
+		<wsdl:part element="tns:getUserIdFromOnlineResponse" name="getUserIdFromOnlineResponse">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="ResumeUserInfoRequest">
+		<wsdl:part element="tns:ResumeUserInfoRequest" name="ResumeUserInfo">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="ResumeUserInfoResponse">
+		<wsdl:part element="tns:ResumeUserInfoResponse" name="ResumeUserInfoResponse">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="offLineUserRequest">
+		<wsdl:part element="tns:offLineUserRequest" name="offLineUser">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="offLineUserResponse">
+		<wsdl:part element="tns:offLineUserResponse" name="offLineUserResponse">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="getUserIdFromTicketRequest">
+		<wsdl:part element="tns:getUserIdFromTicketRequest" name="getUserIdFromTicket">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="getUserIdFromTicketResponse">
+		<wsdl:part element="tns:getUserIdFromTicketResponse" name="getUserIdFromTicketResponse">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="getPrePolicyListRequest">
+		<wsdl:part element="tns:getPrePolicyListRequest" name="getPrePolicyList">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="getPrePolicyListResponse">
+		<wsdl:part element="tns:getPrePolicyListResponse" name="getPrePolicyListResponse">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="modifyPrePolicyRequest">
+		<wsdl:part element="tns:modifyPrePolicyRequest" name="modifyPrePolicy">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="modifyPrePolicyResponse">
+		<wsdl:part element="tns:modifyPrePolicyResponse" name="modifyPrePolicyResponse">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:portType name="CardCharge">
+		<wsdl:operation name="CardNewUser4">
+			<wsdl:input message="tns:CardNewUser4Request" name="CardNewUser4Request">
+		</wsdl:input>
+			<wsdl:output message="tns:CardNewUser4Response" name="CardNewUser4Response">
+		</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="CardDelUser">
+			<wsdl:input message="tns:CardDelUserRequest" name="CardDelUserRequest">
+		</wsdl:input>
+			<wsdl:output message="tns:CardDelUserResponse" name="CardDelUserResponse">
+		</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="CardChangePWD2">
+			<wsdl:input message="tns:CardChangePWD2Request" name="CardChangePWD2Request">
+		</wsdl:input>
+			<wsdl:output message="tns:CardChangePWD2Response" name="CardChangePWD2Response">
+		</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getUserPassWord">
+			<wsdl:input message="tns:getUserPassWordRequest" name="getUserPassWordRequest">
+		</wsdl:input>
+			<wsdl:output message="tns:getUserPassWordResponse" name="getUserPassWordResponse">
+		</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getUserLimitEndDate">
+			<wsdl:input message="tns:getUserLimitEndDateRequest" name="getUserLimitEndDateRequest">
+		</wsdl:input>
+			<wsdl:output message="tns:getUserLimitEndDateResponse" name="getUserLimitEndDateResponse">
+		</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getUserInfo">
+			<wsdl:input message="tns:getUserInfoRequest" name="getUserInfoRequest">
+		</wsdl:input>
+			<wsdl:output message="tns:getUserInfoResponse" name="getUserInfoResponse">
+		</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ModifyUserInfo3">
+			<wsdl:input message="tns:ModifyUserInfo3Request" name="ModifyUserInfo3Request">
+		</wsdl:input>
+			<wsdl:output message="tns:ModifyUserInfo3Response" name="ModifyUserInfo3Response">
+		</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getUserIdFromOnline">
+			<wsdl:input message="tns:getUserIdFromOnlineRequest" name="getUserIdFromOnlineRequest">
+		</wsdl:input>
+			<wsdl:output message="tns:getUserIdFromOnlineResponse" name="getUserIdFromOnlineResponse">
+		</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ResumeUserInfo">
+			<wsdl:input message="tns:ResumeUserInfoRequest" name="ResumeUserInfoRequest">
+		</wsdl:input>
+			<wsdl:output message="tns:ResumeUserInfoResponse" name="ResumeUserInfoResponse">
+		</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="offLineUser">
+			<wsdl:input message="tns:offLineUserRequest" name="offLineUserRequest">
+		</wsdl:input>
+			<wsdl:output message="tns:offLineUserResponse" name="offLineUserResponse">
+		</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getUserIdFromTicket">
+			<wsdl:input message="tns:getUserIdFromTicketRequest" name="getUserIdFromTicketRequest">
+		</wsdl:input>
+			<wsdl:output message="tns:getUserIdFromTicketResponse" name="getUserIdFromTicketResponse">
+		</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getPrePolicyList">
+			<wsdl:input message="tns:getPrePolicyListRequest" name="getPrePolicyListRequest">
+		</wsdl:input>
+			<wsdl:output message="tns:getPrePolicyListResponse" name="getPrePolicyListResponse">
+		</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="modifyPrePolicy">
+			<wsdl:input message="tns:modifyPrePolicyRequest" name="modifyPrePolicyRequest">
+		</wsdl:input>
+			<wsdl:output message="tns:modifyPrePolicyResponse" name="modifyPrePolicyResponse">
+		</wsdl:output>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="CardChargeSoap11" type="tns:CardCharge">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="CardNewUser4">
+			<soap:operation soapAction=""/>
+			<wsdl:input name="CardNewUser4Request">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="CardNewUser4Response">
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="CardDelUser">
+			<soap:operation soapAction=""/>
+			<wsdl:input name="CardDelUserRequest">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="CardDelUserResponse">
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="CardChangePWD2">
+			<soap:operation soapAction=""/>
+			<wsdl:input name="CardChangePWD2Request">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="CardChangePWD2Response">
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getUserPassWord">
+			<soap:operation soapAction=""/>
+			<wsdl:input name="getUserPassWordRequest">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="getUserPassWordResponse">
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getUserLimitEndDate">
+			<soap:operation soapAction=""/>
+			<wsdl:input name="getUserLimitEndDateRequest">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="getUserLimitEndDateResponse">
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getUserInfo">
+			<soap:operation soapAction=""/>
+			<wsdl:input name="getUserInfoRequest">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="getUserInfoResponse">
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ModifyUserInfo3">
+			<soap:operation soapAction=""/>
+			<wsdl:input name="ModifyUserInfo3Request">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="ModifyUserInfo3Response">
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getUserIdFromOnline">
+			<soap:operation soapAction=""/>
+			<wsdl:input name="getUserIdFromOnlineRequest">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="getUserIdFromOnlineResponse">
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ResumeUserInfo">
+			<soap:operation soapAction=""/>
+			<wsdl:input name="ResumeUserInfoRequest">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="ResumeUserInfoResponse">
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="offLineUser">
+			<soap:operation soapAction=""/>
+			<wsdl:input name="offLineUserRequest">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="offLineUserResponse">
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getUserIdFromTicket">
+			<soap:operation soapAction=""/>
+			<wsdl:input name="getUserIdFromTicketRequest">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="getUserIdFromTicketResponse">
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getPrePolicyList">
+			<soap:operation soapAction=""/>
+			<wsdl:input name="getPrePolicyListRequest">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="getPrePolicyListResponse">
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="modifyPrePolicy">
+			<soap:operation soapAction=""/>
+			<wsdl:input name="modifyPrePolicyRequest">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="modifyPrePolicyResponse">
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="CardChargeService">
+		<wsdl:port binding="tns:CardChargeSoap11" name="CardChargeSoap11">
+			<soap:address location="http://localhost:80/services/CardCharge"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>
