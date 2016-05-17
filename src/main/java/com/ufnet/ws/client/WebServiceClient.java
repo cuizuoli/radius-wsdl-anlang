@@ -17,7 +17,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.ws.client.core.WebServiceTemplate;
 
 /**
- * nhn ufnet-ws
+ * ufnet-ws
  * com.ufnet.ws.client.WebServiceClient.java
  * @author st13902
  * @date 2013-5-14

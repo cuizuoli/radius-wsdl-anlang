@@ -10,7 +10,7 @@ package com.ufnet.ws.model;
 import lombok.Data;
 
 /**
- * nhn ufnet-ws
+ * ufnet-ws
  * com.ufnet.ws.model.UserIpMac.java
  * @author st13902
  * @date 2013-5-20

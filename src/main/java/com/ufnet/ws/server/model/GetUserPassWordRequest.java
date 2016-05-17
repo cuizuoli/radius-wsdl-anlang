@@ -13,7 +13,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 import com.ufnet.ws.SimpleConstants;
 
 /**
- * nhn ufnet-ws
+ * ufnet-ws
  * com.ufnet.ws.server.model.GetUserPassWordRequest.java
  * @author st13902
  * @date 2013-5-16

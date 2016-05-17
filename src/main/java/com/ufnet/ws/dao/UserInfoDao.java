@@ -16,7 +16,7 @@ import com.ufnet.ws.model.UserInfo;
 import com.ufnet.ws.model.UserIpMac;
 
 /**
- * nhn ufnet-ws
+ * ufnet-ws
  * com.ufnet.ws.dao.UserInfoDao.java
  * @author st13902
  * @date 2013-5-14

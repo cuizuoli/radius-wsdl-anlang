@@ -15,7 +15,7 @@ import com.ufnet.ws.model.GroupMap;
 import com.ufnet.ws.model.PauseRule;
 
 /**
- * nhn ufnet-ws
+ * ufnet-ws
  * com.ufnet.ws.dao.AccountTypeDao.java
  * @author st13902
  * @date 2013-5-15

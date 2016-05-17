@@ -44,7 +44,7 @@ import com.ufnet.ws.server.model.ResumeUserInfoResponse;
 import com.ufnet.ws.service.UserService;
 
 /**
- * nhn ufnet-ws
+ * ufnet-ws
  * com.ufnet.ws.server.endpoint.UserServiceEndpoint.java
  * @author st13902
  * @date 2013-5-14

@@ -7,6 +7,7 @@
 	</select>
 	<select id="selectOneByLoginName" parameterType="string" resultType="UserInfo">
 		SELECT
+			account_id AS accountId,
 			user_name AS userName,
 			login_name AS loginName,
 			password,

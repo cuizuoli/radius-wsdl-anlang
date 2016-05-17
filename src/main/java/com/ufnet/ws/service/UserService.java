@@ -47,7 +47,7 @@ import com.ufnet.ws.server.model.ResumeUserInfoRequest;
 import com.ufnet.ws.utils.JodaDateUtil;
 
 /**
- * nhn ufnet-ws
+ * ufnet-ws
  * com.ufnet.ws.service.UserService.java
  * @author st13902
  * @date 2013-5-15

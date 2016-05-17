@@ -12,7 +12,7 @@ import java.util.Date;
 import lombok.Data;
 
 /**
- * nhn ufnet-ws
+ * ufnet-ws
  * com.ufnet.ws.model.PredictAccountType.java
  * @author st13902
  * @date 2013-5-17

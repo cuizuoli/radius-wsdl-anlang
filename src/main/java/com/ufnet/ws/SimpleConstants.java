@@ -8,7 +8,7 @@
 package com.ufnet.ws;
 
 /**
- * nhn ufnet-ws
+ * ufnet-ws
  * com.ufnet.ws.SimpleConstants.java
  * @author st13902
  * @date 2013-5-14

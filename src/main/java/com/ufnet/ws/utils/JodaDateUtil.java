@@ -14,7 +14,7 @@ import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
 
 /**
- * nhn ufnet-ws
+ * ufnet-ws
  * com.ufnet.ws.utils.JodaDateUtil.java
  * @author st13902
  * @date 2013-5-16

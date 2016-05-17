@@ -17,7 +17,7 @@ import com.ufnet.ws.model.AccountType;
 import com.ufnet.ws.test.AbstractDaoTest;
 
 /**
- * nhn ufnet-ws
+ * ufnet-ws
  * com.ufnet.ws.dao.AccountTypeDaoTest.java
  * @author st13902
  * @date 2013-5-15

@@ -21,7 +21,7 @@ import org.springframework.xml.transform.StringSource;
 import com.ufnet.ws.test.AbstractTest;
 
 /**
- * nhn ufnet-ws
+ * ufnet-ws
  * com.ufnet.ws.server.endpoint.UserServiceEndpointTest.java
  * @author st13902
  * @date 2013-5-14

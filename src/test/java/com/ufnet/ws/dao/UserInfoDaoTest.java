@@ -16,7 +16,7 @@ import org.junit.Test;
 import com.ufnet.ws.test.AbstractDaoTest;
 
 /**
- * nhn ufnet-ws
+ * ufnet-ws
  * com.ufnet.ws.dao.UserInfoDaoTest.java
  * @author st13902
  * @date 2013-5-14

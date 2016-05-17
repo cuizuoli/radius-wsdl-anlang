@@ -14,7 +14,7 @@ import org.springframework.test.context.transaction.TransactionConfiguration;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
- * nhn ufnet-ws
+ * ufnet-ws
  * com.ufnet.ws.test.AbstractTest.java
  * @author st13902
  * @date 2013-5-14
